@@ -110,6 +110,7 @@ public class MegamSyncAdapter extends AbstractThreadedSyncAdapter {
                     .build();
 
             URL url = new URL(builtUri.toString());
+            Log.i("Open URI =>",url.toString());
 
             // Create the request to OpenWeatherMap, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();
