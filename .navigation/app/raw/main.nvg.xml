@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.ekindesignlabs.android.megam.app.MainActivity"/>
+      <point      
+        x = "3424"      
+        y = "144"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.ekindesignlabs.android.megam.app.DetailActivity"/>
+      <point      
+        x = "2364"      
+        y = "136"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.ekindesignlabs.android.megam.app.SettingsActivity"/>
+      <point      
+        x = "464"      
+        y = "276"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>
