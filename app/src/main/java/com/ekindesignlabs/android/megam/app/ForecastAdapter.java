@@ -105,24 +105,21 @@ public class ForecastAdapter extends CursorAdapter {
 
         // Read user preference for metric or imperial temperature units
         boolean isMetric = Utility.isMetric(context);
-
         // Read high temperature from cursor
         double high = cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP);
-        if(!isMetric) {
-            viewHolder.highTempView.setText(Utility.formatTemperature(context, high) + " | "+ String.format(context.getString(R.string.format_temperature), high));
-        } else {
-            viewHolder.highTempView.setText(Utility.formatTemperature(context, high) + " | "+ Utility.formatFTemperature(context, high));
-        }
-
 
         // Read low temperature from cursor
         double low = cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP);
-        if (!isMetric){
+
+        String unit = Utility.getPreferredUnit(context);
+
+        if (unit.equals("hybrid")) {
+            viewHolder.highTempView.setText(Utility.formatTemperature(context, high) + " | "+ String.format(context.getString(R.string.format_temperature), high));
             viewHolder.lowTempView.setText(Utility.formatTemperature(context, low) + " | "+String.format(context.getString(R.string.format_temperature), low));
         } else {
-            viewHolder.lowTempView.setText(Utility.formatTemperature(context, low) + " | "+ Utility.formatFTemperature(context, low));
+            viewHolder.highTempView.setText(Utility.formatTemperature(context, high));
+            viewHolder.lowTempView.setText(Utility.formatTemperature(context, low));
         }
-
     }
 
     public void setUseTodayLayout(boolean useTodayLayout) {

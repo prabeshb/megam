@@ -64,6 +64,9 @@
     <!-- Value in sharedPreferences for hybrid temperature unit option -->
     <string name="pref_units_hybrid" translatable="false">hybrid</string>
 
+    <!-- Default Unit preference [CHAR LIMIT=NONE] -->
+    <string name="pref_unit_default" translatable="false">hybrid</string>
+
     <!-- Language-specific constants -->
     <string name="today">Today</string>
 
