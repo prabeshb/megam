@@ -212,6 +212,17 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             String lowString = Utility.formatTemperature(getActivity(), low);
             mLowTempView.setText(lowString);
 
+            String unit = Utility.getPreferredUnit(getActivity());
+
+            if (unit.equals("hybrid")) {
+                mHighTempView.setText(Utility.formatTemperature(getActivity(), high) + " | "+ String.format(getActivity().getString(R.string.format_temperature), high));
+                mLowTempView.setText(Utility.formatTemperature(getActivity(), low) + " | "+String.format(getActivity().getString(R.string.format_temperature), low));
+            } else {
+                mHighTempView.setText(Utility.formatTemperature(getActivity(), high));
+                mLowTempView.setText(Utility.formatTemperature(getActivity(), low));
+            }
+
+
             // Read humidity from cursor and update view
             float humidity = data.getFloat(COL_WEATHER_HUMIDITY);
             mHumidityView.setText(getActivity().getString(R.string.format_humidity, humidity));

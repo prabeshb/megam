@@ -2,6 +2,7 @@ package com.ekindesignlabs.android.megam.app;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.media.Image;
 import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,14 +79,14 @@ public class ForecastAdapter extends CursorAdapter {
         switch (viewType) {
             case VIEW_TYPE_TODAY: {
                 // Get weather icon
-                viewHolder.iconView.setImageResource(Utility.getArtResourceForWeatherCondition(
-                        cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
+                viewHolder.iconView.setImageResource(Utility.getIconForWeatherCondition(
+                        cursor.getString(ForecastFragment.COL_WEATHER_CONDITION_ID)));
                 break;
             }
             case VIEW_TYPE_FUTURE_DAY: {
                 // Get weather icon
-                viewHolder.iconView.setImageResource(Utility.getIconResourceForWeatherCondition(
-                        cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
+//                viewHolder.iconView.setImageResource(R.drawable.ic_+cursor.getInt(ForecastFragment.COL_WEATHER_ICON));
+//                        Utility.getIconResourceForWeatherCondition(cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
                 break;
             }
         }
@@ -103,7 +104,7 @@ public class ForecastAdapter extends CursorAdapter {
         // For accessibility, add a content description to the icon field
         viewHolder.iconView.setContentDescription(description);
 
-        // Read user preference for metric or imperial temperature units
+        // Read user preference for metric or Fahrenheit temperature units
         boolean isMetric = Utility.isMetric(context);
         // Read high temperature from cursor
         double high = cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP);

@@ -205,6 +205,9 @@ public class MegamSyncAdapter extends AbstractThreadedSyncAdapter {
         final String OWM_DESCRIPTION = "main";
         final String OWM_WEATHER_ID = "id";
 
+        //Added for getting the ICON
+        final String OWM_ICON_ID = "icon";
+
         try {
             JSONObject forecastJson = new JSONObject(forecastJsonStr);
             JSONArray weatherArray = forecastJson.getJSONArray(OWM_LIST);
@@ -252,6 +255,9 @@ public class MegamSyncAdapter extends AbstractThreadedSyncAdapter {
                 String description;
                 int weatherId;
 
+                //Added by PB
+                String iconStrVal;
+
                 // Get the JSON object representing the day
                 JSONObject dayForecast = weatherArray.getJSONObject(i);
 
@@ -269,6 +275,9 @@ public class MegamSyncAdapter extends AbstractThreadedSyncAdapter {
                         dayForecast.getJSONArray(OWM_WEATHER).getJSONObject(0);
                 description = weatherObject.getString(OWM_DESCRIPTION);
                 weatherId = weatherObject.getInt(OWM_WEATHER_ID);
+
+                //Added by PB
+                iconStrVal = weatherObject.getString(OWM_ICON_ID);
 
                 // Temperatures are in a child object called "temp".  Try not to name variables
                 // "temp" when working with temperature.  It confuses everybody.
@@ -288,6 +297,7 @@ public class MegamSyncAdapter extends AbstractThreadedSyncAdapter {
                 weatherValues.put(WeatherContract.WeatherEntry.COLUMN_MIN_TEMP, low);
                 weatherValues.put(WeatherContract.WeatherEntry.COLUMN_SHORT_DESC, description);
                 weatherValues.put(WeatherContract.WeatherEntry.COLUMN_WEATHER_ID, weatherId);
+                weatherValues.put(WeatherContract.WeatherEntry.COLUMN_WEATHER_ICON, iconStrVal);
 
                 cVVector.add(weatherValues);
             }

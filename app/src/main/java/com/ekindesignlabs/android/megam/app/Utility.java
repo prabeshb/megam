@@ -231,9 +231,28 @@ public class Utility {
         return -1;
     }
 
+
+    /**
+     * Helper method to provide the weather icon based according to the weather condition id returned
+     * by the OpenWeatherMap call.
+     * @param weatherId from OpenWeatherMap API response
+     * @return resource id for the corresponding icon. -1 if no relation is found.
+     */
+    public static int getIconForWeatherCondition(String IconStr) {
+        int retVal;
+        switch (IconStr) {
+            case "01d":
+                retVal = R.drawable.ic_cloudy;
+                break;
+            default:
+                retVal = R.drawable.ic_01d;
+        }
+        return retVal;
+    }
+
     /**
      * Helper method to provide the art resource id according to the weather condition id returned
-     * by the OpenWeatherMap call.
+     * by the OpenWeatherMap call.re
      * @param weatherId from OpenWeatherMap API response
      * @return resource id for the corresponding icon. -1 if no relation is found.
      */
