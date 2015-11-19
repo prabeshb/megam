@@ -242,7 +242,58 @@ public class Utility {
         int retVal;
         switch (IconStr) {
             case "01d":
-                retVal = R.drawable.ic_cloudy;
+                retVal = R.drawable.ic_01d;
+                break;
+            case "01n":
+                retVal = R.drawable.ic_01n;
+                break;
+            case "02d":
+                retVal = R.drawable.ic_02d;
+                break;
+            case "02n":
+                retVal = R.drawable.ic_02n;
+                break;
+            case "03d":
+                retVal = R.drawable.ic_03d;
+                break;
+            case "03n":
+                retVal = R.drawable.ic_03n;
+                break;
+            case "04d":
+                retVal = R.drawable.ic_04d;
+                break;
+            case "04n":
+                retVal = R.drawable.ic_04n;
+                break;
+            case "09d":
+                retVal = R.drawable.ic_09d;
+                break;
+            case "09n":
+                retVal = R.drawable.ic_09n;
+                break;
+            case "10d":
+                retVal = R.drawable.ic_10d;
+                break;
+            case "10n":
+                retVal = R.drawable.ic_10n;
+                break;
+            case "11d":
+                retVal = R.drawable.ic_11d;
+                break;
+            case "11n":
+                retVal = R.drawable.ic_11n;
+                break;
+            case "13d":
+                retVal = R.drawable.ic_13d;
+                break;
+            case "13n":
+                retVal = R.drawable.ic_13n;
+                break;
+            case "50d":
+                retVal = R.drawable.ic_50d;
+                break;
+            case "50n":
+                retVal = R.drawable.ic_50n;
                 break;
             default:
                 retVal = R.drawable.ic_01d;

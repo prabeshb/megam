@@ -85,8 +85,8 @@ public class ForecastAdapter extends CursorAdapter {
             }
             case VIEW_TYPE_FUTURE_DAY: {
                 // Get weather icon
-//                viewHolder.iconView.setImageResource(R.drawable.ic_+cursor.getInt(ForecastFragment.COL_WEATHER_ICON));
-//                        Utility.getIconResourceForWeatherCondition(cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
+                viewHolder.iconView.setImageResource(Utility.getIconForWeatherCondition(
+                        cursor.getString(ForecastFragment.COL_WEATHER_CONDITION_ID)));
                 break;
             }
         }
